@@ -1,4 +1,4 @@
-class Jot < Formula
+class JotCli < Formula
   desc "Terminal-first notebook and local document viewer"
   homepage "https://github.com/Intina47/jot"
   version "1.5.5"
@@ -20,5 +20,9 @@ class Jot < Formula
 
   def install
     bin.install "jot"
+  end
+
+  test do
+    assert_match "jot #{version}", shell_output("#{bin}/jot help")
   end
 end
